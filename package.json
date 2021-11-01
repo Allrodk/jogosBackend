@@ -1,5 +1,5 @@
 {
-  "name": "Projeto1Mod3",
+  "name": "jogosbackend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Allrodk/Projeto1Mod3.git"
+    "url": "git+https://github.com/Allrodk/jogosBackend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Allrodk/Projeto1Mod3/issues"
+    "url": "https://github.com/Allrodk/jogosBackend/issues"
   },
-  "homepage": "https://github.com/Allrodk/Projeto1Mod3#readme",
+  "homepage": "https://github.com/Allrodk/jogosBackend#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"

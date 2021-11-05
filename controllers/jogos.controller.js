@@ -51,16 +51,22 @@ module.exports = {
     setTimeout(() => {
       message = "";
     }, 5000);
-    res.send(jogos, message);
+    res.send({ jogos, message });
   },
 
   //PUT atualiza uma posicao da lista que foi identificada
   putEditar: async (req, res) => {
     const jogoAtual = req.body;
     const idParam = req.params.id;
-    const index = jogos.findIndex((jogo) => jogo.id == idParam);
-    jogos[index] = { ...jogos[index], ...jogoAtual };
-    res.send(jogos);
+    const index = await jogos.findIndex((jogo) => jogo.id == idParam);
+    if (jogoAtual.titulo != "" || jogoAtual.imagem != "") {
+      jogos[index] = { ...jogos[index], ...jogoAtual };
+      message = `Jogo ${jogoAtual.titulo} alterado com sucesso`;
+    }
+    setTimeout(() => {
+      message = "";
+    }, 5000);
+    res.send({ jogos, message });
   },
 
   deletar: async (req, res) => {

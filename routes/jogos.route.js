@@ -8,6 +8,6 @@ router.get("/", controller.getTudo);
 router.get("/:id", controller.getUm);
 router.post("/novo", controller.postNovo);
 router.put("/editar/:id", controller.putEditar);
-router.get("/deletar/:id", controller.deletar);
+router.delete("/deletar/:id", controller.deletar);
 
 module.exports = router;

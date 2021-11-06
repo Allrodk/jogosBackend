@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-const controller = require("../controllers/jogos.controller");
+const JogosController = require("./../controllers/jogos.controller");
+const jogosController = new JogosController();
 
 //Rotas
-router.get("/", controller.getTudo);
-router.get("/:id", controller.getUm);
-router.post("/novo", controller.postNovo);
-router.put("/editar/:id", controller.putEditar);
-router.delete("/deletar/:id", controller.deletar);
+router.get("/", jogosController.getTudo);
+router.get("/:id", jogosController.getUm);
+router.post("/novo", jogosController.postNovo);
+router.put("/editar/:id", jogosController.putEditar);
+router.delete("/deletar/:id", jogosController.deletar);
 
 module.exports = router;

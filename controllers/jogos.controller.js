@@ -29,19 +29,19 @@ let jogos = [
   },
 ];
 
-module.exports = {
+class JogosController {
   //GET rota que exibe a lista de jogos completa
-  getTudo: async (req, res) => {
+  getTudo = async (req, res) => {
     res.send(jogos);
-  },
+  };
 
-  getUm: async (req, res) => {
+  getUm = async (req, res) => {
     const id = req.params.id - 1;
     res.json(jogos[id]);
-  },
+  };
 
   //POST salvando novo jogo na lista
-  postNovo: async (req, res) => {
+  postNovo = async (req, res) => {
     const novoJogo = req.body;
     novoJogo.id = [...jogos].pop().id + 1;
     if (novoJogo.titulo != "" || novoJogo.imagem != "") {
@@ -52,10 +52,10 @@ module.exports = {
       message = "";
     }, 5000);
     res.send({ jogos, message });
-  },
+  };
 
   //PUT atualiza uma posicao da lista que foi identificada
-  putEditar: async (req, res) => {
+  putEditar = async (req, res) => {
     const jogoAtual = req.body;
     const idParam = req.params.id;
     const index = await jogos.findIndex((jogo) => jogo.id == idParam);
@@ -67,9 +67,9 @@ module.exports = {
       message = "";
     }, 5000);
     res.send({ jogos, message });
-  },
+  };
 
-  deletar: async (req, res) => {
+  deletar = async (req, res) => {
     const idParam = req.params.id;
     const index = jogos.findIndex((jogo) => jogo.id == idParam);
     const jogoAtual = jogos[index];
@@ -82,5 +82,7 @@ module.exports = {
       message = "";
     }, 5000);
     res.send({ jogos, message });
-  },
-};
+  };
+}
+
+module.exports = JogosController;

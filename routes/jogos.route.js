@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const JogosController = require("./../controllers/jogos.controller");
+const JogosController = require("../controllers/jogos.controller");
 const jogosController = new JogosController();
 
 //Rotas

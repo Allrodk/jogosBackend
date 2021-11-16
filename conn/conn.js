@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 //url de conexão  = mongodb://servidor:porta/nomedobanco
 
-const Conn = () => {
+const Conn = () => {  
   mongoose
-    .connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_BASE}`, {
+    .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_BASE}?retryWrites=true&w=majority`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
